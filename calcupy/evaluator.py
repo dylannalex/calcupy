@@ -15,7 +15,9 @@ def _replace_number_variables(expression: str, number_variables: NumberVariables
     _replace_number_variables(expression, number_variables)
     >>> "2 * 4"
     """
-    for identifier in number_variables.get_identifiers():
+    identifiers = number_variables.get_identifiers()
+    sorted_identifiers = sorted(identifiers, key=len, reverse=True)
+    for identifier in sorted_identifiers:
         if identifier in expression:
             expression = expression.replace(
                 identifier, str(number_variables.get_value(identifier))
@@ -37,7 +39,9 @@ def _replace_function_variables(expression: str, function_variables: FunctionVar
     _replace_function_variables(expression, function_variables)
     >>> "2 * _run_function(function_variables.get_value("foo"), 1, 2)"
     """
-    for identifier in function_variables.get_identifiers():
+    identifiers = function_variables.get_identifiers()
+    sorted_identifiers = sorted(identifiers, key=len, reverse=True)
+    for identifier in sorted_identifiers:
         if identifier in expression:
             expression = expression.replace(
                 f"{identifier}(",
