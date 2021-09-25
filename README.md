@@ -6,9 +6,26 @@
 
 Create console-based calculators in a few lines of code.
 
-## :pushpin: Creating a calculator
+## :pushpin: Installation
+```
+pip install calcupy
+```
 
-### :round_pushpin: Add predefined numeric variables:
+## :pushpin: Usage
+```
+from calcupy import Calculator
+
+calculator = Calculator()
+calculator.start()
+```
+
+## :pushpin: Calculator parameters
+Calculator have four parameters:
+```
+Calculator(number_variables, function_variables, title, bullet)
+```
+
+### :round_pushpin: number_variables:
 
 ```
 GRAVITY = 9.8
@@ -32,7 +49,7 @@ $ v + g * 0.01
 20.098
 ```
 
-### :round_pushpin: Add predefined functions:
+### :round_pushpin: function_variables:
 
 ```
 def factorial(n):
